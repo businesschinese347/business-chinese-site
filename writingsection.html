@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <title>Writing Section</title>
+      <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden; 
+    }
+
+    header {
+      background-image:url("writingpageheader.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 300px;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .header-content {
+     background-color: rgba(0, 0, 0, 0.5); 
+     padding: 20px 40px;
+     border-radius: 20px;
+     max-width: 1000px;
+     text-align: center;
+    }
+
+      header h1 {
+      font-size: 5em;
+      margin:0;
+    }
+
+/* Whole tab container */
+.dp-panels-wrapper {
+  display: flex;
+  flex-direction: row; /* ✅ ensures left-to-right layout */
+  width: 85%;
+  max-width: 1300px;
+  margin: 50px auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  font-size: 18px;           /* ✅ increase base text size */
+  line-height: 1.8;          /* ✅ easier to read */
+}
+
+/* Left side: button list */
+.dp-panel-buttons {
+  display: flex;
+  flex-direction: column; /* ✅ makes buttons vertical */
+  width: 20%;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+/* Button style */
+.dp-panel-buttons button {
+  background-color: #f4f4f4;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 18px 28px;
+  margin: 5px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s;
+  font-size: 18px;
+}
+
+.dp-panel-buttons button:hover {
+  background-color: #ddd;
+  padding-left: 36px;  
+}
+
+.dp-panel-buttons button.active {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+}
+
+/* Right side: content area */
+.dp-panel-content {
+  flex: 1;
+  padding: 50px 70px;
+  display: none; /* hide all by default */
+  background-color: white;
+}
+
+.dp-panel-content.active {
+  display: block;
+}
+
+/* Adjust heading and list spacing for readability */
+.dp-panel-content h2, .dp-panel-content h3 {
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.dp-panel-content ul {
+  margin-left: 30px;
+  line-height: 1.9;
+}
+
+.carousel-slide img {
+  display: block;
+  max-width: 100%;         /* responsive */
+  max-height: 600px;       /* limit height */
+  margin: 20px auto;       /* center horizontally */
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  object-fit: contain;     /* keeps full image visible */
+  transition: transform 0.3s ease;
+}
+
+
+/* Carousel core */
+.carousel { position: relative; max-width: 1200px; margin: 20px auto 0; }
+.carousel-viewport { overflow: hidden; border: 1px solid #e6e6e6; border-radius: 12px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+.carousel-track { display: flex; transition: transform 0.4s ease; }
+.carousel-slide { min-width: 100%; padding: 24px 28px; box-sizing: border-box; text-align: center;}
+
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  border: 0; background: rgba(0,0,0,0.6); color: #fff;
+  z-index: 5;                      /* ✅ sit above slides/viewport */
+  pointer-events: auto;    
+  width: 36px; height: 36px; border-radius: 50%;
+  cursor: pointer; line-height: 36px; text-align: center; font-size: 22px;
+}
+.carousel-btn.prev { left: 6px; }
+.carousel-btn.next { right: 6px; }
+
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+.carousel-dots .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid #003366; background: transparent; cursor: pointer; }
+.carousel-dots .dot.active { background: #003366; }
+
+.download-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background-color: #003366;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: #0055aa;
+  transform: translateY(-2px);
+}
+
+/* Sample Resume image styling */
+#Sample-Resume img {
+  display: block;             /* ensures it takes up its own line */
+  max-width: 100%;             /* fits nicely within the content area */
+  max-height: 700px;          /* limit so it doesn't get too tall */
+  margin: 30px auto;          /* centers the image horizontally with top/bottom spacing */
+  border-radius: 10px;        /* soft rounded corners */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2); /* subtle shadow for depth */
+  object-fit: contain;        /* keeps the full resume visible, no stretching */
+}
+
+ .button-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;                 
+      max-width: 1200px;
+      margin: 40px auto 20px;
+      padding: 0;
+      margin-top: 50px;
+      }
+
+.button-bar button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: medium;
+      cursor: pointer; 
+      
+    }
+
+    .button-bar button:hover {
+      background-color: #1565c0;
+      transform: translateY(-8px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+<h1>Writing Section</h1>
+<p>现在， 你需要为自己的求职做准备了。想象你现在在求职网站上看到了你梦寐以求(dream of)的职位。 你迫不及待(too eager to wait)地想要开始写自己的简历并且递交。这个时候 你应该怎么做呢？</p>
+        </div>
+    </header>
+    
+    <div class="dp-panels-wrapper">
+    <div class="dp-panel-buttons">
+    <button class="tab-btn active" onclick="openTab(event, 'writing-a-Resume')">Writing a Resume</button>
+    <button class="tab-btn" onclick="openTab(event, 'Resume-Templates')">Resume Templates</button>
+    <button class="tab-btn" onclick="openTab(event, 'Sample-Resume')">Sample Resume</button>
+    <button class="tab-btn" onclick="openTab(event, 'Writing-Tips')">Writing Tips</button>
+  </div>
+   
+    
+    <div class="dp-panel-content active" id="writing-a-Resume">
+      <h2>工作经历:</h2>
+        <ul>
+        <li>-解决________ 问题</li>
+        <li>-我主要负责______, 遇到了______ 困难， 通过______ 方法解决。</li>
+        <li>-解决问题之后，销量/效率/满意度提升了______%。</li>
+        <li>-负责某产品方案落地，前期方案和愿景计划</li>
+        <li>-实施阶段负责对接产品， 推进产品落地</li>
+        <li>-重点负责某产品，用户纳新20万，活跃率均有10%的增长</li>
+      </ul>
+
+       <h2>万能公式： 动词+事件+结果 （带上数字）</h2>
+        <ul>
+            <li>-参与10+场商业展销策划活动， 总参与人数达3万+人， 销售率提升10%。</li>
+            <li>-主导销售活动发布工作， 负责公众号，抖音号等渠道推广内容创作， 全平台总阅读量达2万以上。</li>
+            <Li>-协调管理项目编辑， 推动建立大纲讨论， 保障项目进展速度和质量。</Li>
+        </ul>
+    </div>
+ 
+     <div class="dp-panel-content" id="Resume-Templates">
+       <div class="carousel" id="resume-carousel">
+    <button class="carousel-btn prev" aria-label="Previous" onclick="slideTemplates(-1)">‹</button>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track">
+        <!-- Slide 1 -->
+        <div class="carousel-slide">
+          <h4>Template 1</h4>
+          <img src="resume template 1.jpg" alt="Template 1 preview">
+           <a href="resume-template-1.docx" download class="download-btn">Download Template 1</a>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <h4>Template 2</h4>
+          <img src="resume template2.jpg" alt="Template 2 preview">
+           <a href="resume-template-2.docx" download class="download-btn">Download Template 2</a>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <h4>Template 3</h4>
+         <img src="resume template 3.jpg" alt="Template 3 preview">
+          <a href="resume-template-3.docx" download class="download-btn">Download Template 3</a>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-slide">
+          <h4>Template 4</h4>
+          <img src="resume template 4.jpg" alt="Template 4 preview">
+           <a href="resume-template-4.docx" download class="download-btn">Download Template 4</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn next" aria-label="Next" onclick="slideTemplates(1)">›</button>
+    <div class="carousel-dots" id="resume-dots"></div>
+  </div>
+</div>
+ 
+
+  <div class="dp-panel-content" id="Sample-Resume">
+      <img src="sample resume.jpg" alt="Sample Resume">
+    </div>
+
+  <div class="dp-panel-content" id="Writing-Tips">
+      <h2>Tips：线上递交简历，这些细节要注意。</h2>
+    <p>-邮件标题：一般情况，招聘公司对于求职者的电子邮件有具体的邮件标题格式要求。求职者应按照职位要求书写。如果没有， 要在邮件标题中， 写清楚自己的姓名和申请职位. 如： 姓名+应聘销售助理</p>
+    <p>-标题应该避免过多于职位申请无关或者其它过于花哨的内容。</p>
+    <p>-正文： 用一两句话介绍自己和对职位的兴趣。列出自己的主要竞争优势和职位的匹配度并强调自己的简历附件， 最后提供联系方式，进一步表达自己的意向。（附上自己的电子版简历）</p>
+    <p>-附件的标题和招聘公司要求一致， 或者与标题一致</p>
+    <p>-PDF格式</p>
+    </div>
+</div>
+
+  <div class="button-bar">
+    <a href="lesson1.html"><button >Back To Lesson 1 Page</button></a>
+    <a href="homepage.html"><button >Back To Home Page</button></a>
+  </div>
+
+<script>
+function openTab(evt, tabId) {
+  document.querySelectorAll(".dp-panel-content").forEach(c => c.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+
+  document.getElementById(tabId).classList.add("active");
+  evt.currentTarget.classList.add("active");
+
+  // init the carousel when switching to the resume tab
+  if (tabId === 'Resume-Templates') {
+    setTimeout(initResumeCarousel, 0);
+  }
+}
+</script>
+
+<script>
+let resumeIndex = 0;
+let resumeReady = false;
+
+function initResumeCarousel() {
+  const track = document.querySelector('#Resume-Templates .carousel-track');
+  const dotsWrap = document.getElementById('resume-dots');
+  if (!track || !dotsWrap) return;
+
+  const slides = Array.from(track.children);
+
+  if (!dotsWrap.dataset.built) {
+    dotsWrap.innerHTML = '';
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'dot' + (i === resumeIndex ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.addEventListener('click', () => goToResumeSlide(i));
+      dotsWrap.appendChild(d);
+    });
+    dotsWrap.dataset.built = '1';
+  }
+
+  resumeReady = true;
+  goToResumeSlide(resumeIndex);
+}
+
+function goToResumeSlide(n) {
+  const track = document.querySelector('#Resume-Templates .carousel-track');
+  const dots = document.querySelectorAll('#resume-dots .dot');
+  if (!track) return;
+
+  const slides = Array.from(track.children);
+  if (!slides.length) return;
+
+  resumeIndex = (n + slides.length) % slides.length;
+  track.style.transform = `translateX(-${resumeIndex * 100}%)`;
+
+  dots.forEach(d => d.classList.remove('active'));
+  if (dots[resumeIndex]) dots[resumeIndex].classList.add('active');
+}
+
+function slideTemplates(delta) {
+  if (!resumeReady) initResumeCarousel();
+  goToResumeSlide(resumeIndex + delta);
+}
+
+// Initialize on load only if that tab is active at start
+document.addEventListener('DOMContentLoaded', () => {
+  const isTemplatesActive = document.getElementById('Resume-Templates')?.classList.contains('active');
+  if (isTemplatesActive) initResumeCarousel();
+});
+</script>
+</body>

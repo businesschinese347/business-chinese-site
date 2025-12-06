@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <head>
+  <meta charset="utf-8" />
+  <title>Dialogue Section</title>
+
+  <!-- Tippy.js (Popper + Tippy) + a clean light theme -->
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light-border.css">
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-image: url("dialogueimage1.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 300px;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .header-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 40px;
+      border-radius: 20px;
+      max-width: 1000px;
+      text-align: center;
+    }
+
+      header h1 {
+      font-size: 5em;
+      margin:0;
+    }
+
+    .callout {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 18px 20px;
+  background: darkred;
+  border-left: 5px solid red;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  animation: callout-enter 0.9s ease-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes callout-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.callout-icon {
+  font-size: 30px;
+  color: red;
+  margin-top: 1px;
+}
+
+.callout-text {
+  font-size: 1.3rem;
+  line-height: 2.5;
+  color: white;
+}
+
+    .dialogue-card {
+  max-width: 1800px;
+  margin: 40px auto;              
+  background:wheat;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.dialogue-card p {
+  margin-bottom: 1rem;
+}
+
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; line-height: 1.65; margin: 2rem; }
+    h1 { margin-bottom: 1rem; }
+    p { margin: 1rem 0; }
+
+    /* Visual hint that a word is hoverable/tappable */
+    .vocab {
+      border-bottom: 1px dotted #888;
+      cursor: help;
+      padding-bottom: 1px;
+    }
+
+    .tt {
+      font-size: 0.95rem;
+      max-width: 260px;
+    }
+    .tt .pinyin { color: #0b6; font-weight: 600; }
+    .tt .en { color: #0b6; }
+    .tt .meaning { color: #0b6; }
+    .tt .label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: .04em; }
+    .tt .sep { margin: .4rem 0; border-top: 1px solid #eee; }
+
+     .button-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;                 
+      max-width: 1200px;
+      margin: 40px auto 20px;
+      padding: 0;
+      margin-top: 50px;
+}
+
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: medium;
+      cursor: pointer; 
+      
+    }
+
+    button:hover {
+      background-color: #1565c0;
+      transform: translateY(-8px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+    }
+
+  </style>
+</head>
+<body>  
+<header>
+        <div class="header-content">
+<h1>Dialogue Section</h1>
+<p><p>想象一下你在投了很多
+        <span class="vocab"
+          data-pinyin="jiǎn lì"
+          data-en="Résumé/CV"
+          data-meaning="A document outlining one’s education, work experience, and skills for job applications.">简历</span>
+        后终于收到了 <span class="vocab"
+          data-pinyin="miàn shì"
+          data-en="Interview"
+          data-meaning="A formal meeting to evaluate a candidate for a job or school program.">面试</span>
+        <span class="vocab"
+          data-pinyin="tōng zhī"
+          data-en="Notice/Notification"
+          data-meaning="A message to inform someone of something officially (e.g., interview notice, job offer).">通知</span>。
+        你将要去一家名叫福建
+        <span class="vocab"
+          data-pinyin="hé chuān"
+          data-en="Hechuan (proper noun)"
+          data-meaning="A company name.">禾川</span>
+        科技有限公司面试市场
+        <span class="vocab"
+          data-pinyin="zǒng jiān"
+          data-en="Director"
+          data-meaning="A senior executive responsible for overseeing a department.">总监</span>
+        的职位。 这是一家成立于2020年、专注于食品
+        <span class="vocab"
+          data-pinyin="hōng bèi"
+          data-en="Baking"
+          data-meaning="The process of cooking food(especially bread, cakes using dry heat).">烘焙</span>
+        <span class="vocab"
+          data-pinyin="yán fā"
+          data-en="Research and Development"
+          data-meaning="Activities related to the innovation and improvement of products or processes.">研发</span>
+        与生产,主要经营食品生产,烘焙
+         <span class="vocab"
+          data-pinyin="jì shù"
+          data-en="Technology/Technique"
+          data-meaning="Practical skills or methods used in production, or scientific/engineering expertise.">技术</span>
+        <span class="vocab"
+          data-pinyin="jiě jué"
+          data-en="Sans/Resolve"
+          data-meaning="To find an answer to a problem or handle a business issue.">解决</span>
+        <span class="vocab"
+          data-pinyin="fāng àn"
+          data-en="Plan/Solution/Proposal"
+          data-meaning="A proposed method or strategy to address a problem or implement a project.">方案</span>
+        等。</p>
+        </div>
+    </header>
+
+    <div class="callout">
+  <div class="callout-icon">📣</div>
+  <div class="callout-text">
+    Hover any word with a curved underline to see pinyin, meaning, and English translation.
+  </div>
+</div>
+
+<div class="dialogue-card">
+<p><strong>面试官：</strong>您好，感谢您今天来参加我们福建禾川科技的面试。我们这次招聘的是市场总监岗位，您可以简单介绍一下您自己和之前的工作经验吗？</p>
+<p><strong>面试者: </strong>您好，陈女士。 非常感谢贵公司给我这次面试机会。 我毕业于北京大学2020届市场营销专业,我
+        <span class="vocab"
+          data-pinyin="cóng shì"
+          data-en="Be engaged in/Work in"
+          data-meaning="To be involved in or work in a particular field or activity.">从事</span>
+        市场营销工作已经有2年时间了,主要负责品牌建设、市场推广和市场营销活动 
+        <span class="vocab"
+          data-pinyin="cè huà"
+          data-en="Planning/Strategizing"
+          data-meaning="To make strategic plans.">策划</span>。
+        我曾策划过很多国内的食品品牌推广
+         <span class="vocab"
+          data-pinyin="xiàng mù"
+          data-en="Project/Program"
+          data-meaning="A planned set of tasks with a specific goal, often time-limited and resource-bound.">项目</span>，
+        包括新品发布、促销等活动。</p>
+<p><strong>面试官：</strong>您在营销行业的经验和我们的需求非常
+        <span class="vocab"
+          data-pinyin="pǐ pèi"
+          data-en="Match/Align"
+          data-meaning="To be compatible with or aligned with something in value, function, or demand.">匹配</span>，
+        那您对我们的公司有多少了解呢？ 为什么想要加入我们公司？</P>
+<p><strong>面试者: </strong>我关注贵公司一段时间了。 我了解到贵公司是一家专注于烘焙食品研发及食品生产的企业， 并且拥有完整且成熟的食品研发和销售系统。 我特别赞同贵公司对于食品安全生产的   
+        <span class="vocab"
+          data-pinyin="jǐn shèn"
+          data-en="Cautious/Prudent"
+          data-meaning="Acting with care and thought to avoid risk.">谨慎</span>
+        <span class="vocab"
+          data-pinyin="tài dù"
+          data-en="Attitude"
+          data-meaning="The way a person thinks, feels, or behaves toward someone or something, often reflected in their words or actions.">态度</span>， 
+        同时希望能将我之前的市场经验带入团队，与公司一起
+        <span class="vocab"
+          data-pinyin="kāi fā"
+          data-en="Develop/Development"
+          data-meaning="To create, design, or improve a product, market, or resource.">开发</span>
+        更大的市场。</P>
+<p><strong>面试官：</strong>那您可以分享一下对于未来食品行业市场发展的
+        <span class="vocab"
+          data-pinyin="qū shì"
+          data-en="Trend"
+          data-meaning="A general direction in which something is developing or changing.">趋势</span>吗？</P>
+<p><strong>面试者: </strong>我认为未来食品行业的市场发展将更加
+        <span class="vocab"
+          data-pinyin="jù jiāo"
+          data-en="Focus"
+          data-meaning="To concentrate efforts or attention on a specific issue, topic, or area.">聚焦</span>于健康营养和
+        <span class="vocab"
+          data-pinyin="fāng biàn kuài jié"
+          data-en="Convenient and fast/Convenient and efficient"
+          data-meaning="Often used to describe services, tools, or processes that save time and effort.">方便快捷</span>，满足
+        <span class="vocab"
+          data-pinyin="xiāo fèi zhě"
+          data-en="Consumer"
+          data-meaning="A person who purchases goods or services for personal use.">消费者</span>对生活品质的需求。同时，数字化营销将成为未来产品营销的主要模式。</P>
+<p><strong>面试官：</strong>听得出来您对市场发展趋势了如指掌，那您可以简单地说一下您对团队管理的
+        <span class="vocab"
+          data-pinyin="jiàn jiě"
+          data-en="Insight/Perspective"
+          data-meaning="A personal understanding, point of view, or analysis of an issue.">见解</span>吗？</P>
+<p><strong>面试者: </strong> 
+        <span class="vocab"
+          data-pinyin="guò jiǎng"
+          data-en="Overpraise/Flattered"
+          data-meaning="A polite response when someone compliments you, expressing modesty.">过奖</span>过奖。我个人比较注重团队目标
+        <span class="vocab"
+          data-pinyin="gòng shí"
+          data-en="Consensus"
+          data-meaning="A shared understanding or agreement among people or groups.">共识</span>和成员之间的
+        <span class="vocab"
+          data-pinyin="níng jù lì"
+          data-en="Cohesion/Team cohesion"
+          data-meaning="The ability of a group or organization to stay united and work effectively together.">凝聚力</span>。同时我也会定期组织
+        <span class="vocab"
+          data-pinyin="fù pán"
+          data-en="Review/Debrief/Retrospective"
+          data-meaning="To analyze and review a past event or process (often used in business/project summaries).">复盘</span>会议，确保每个成员都明确自己的岗位职责，同时相互学习，共同成长。</P>
+<p><strong>面试官：</strong>非常好， 我们今天的交流就先到这里，我会把今天的面试情况
+        <span class="vocab"
+          data-pinyin="huì bào"
+          data-en="Report/Give a report"
+          data-meaning="To formally report work, progress, or results, often to a superior or group.">汇报</span>给我们的上级领导。我会在三日内给您答复， 还请您保持手机畅通。 </P>
+<p><strong>面试官：</strong>您这边对于我们还有任何问题吗？</P>
+<p><strong>面试者: </strong>谢谢您。 如果之后有幸加入贵公司，我想要了解一下，这个岗位之后会面对的挑战是什么？</P>
+<p><strong>面试官：</strong>这个职位的主要目标是希望扩大产品的市场推广和加强新品的品牌知名度。</P>
+<p><strong>面试者: </strong>好的明白，这是我熟悉的
+        <span class="vocab"
+          data-pinyin="lǐng yù"
+          data-en="Field/Domain"
+          data-meaning="A specific area of knowledge, work, or influence.">领域</span>，期待能有机会<span class="vocab"
+          data-pinyin="gòng xiàn"
+          data-en="Contribution"
+          data-meaning="The act of giving or adding value to a project, group, or cause.">贡献</span>我的绵薄之力，携手共进。谢谢</P>
+</div>
+
+   <div class="button-bar">
+    <a href="lesson1.html"><button >Back To Lesson 1 Page</button></a>
+    <a href="homepage.html"><button >Back To Home Page</button></a>
+  </div>
+
+<script>
+    // Initialize Tippy for all .vocab spans
+    document.addEventListener('DOMContentLoaded', () => {
+      tippy('.vocab', {
+        allowHTML: true,
+        theme: 'light-border',
+        placement: 'top',
+        interactive: false,  // set true if you want selectable text in tooltip
+        delay: [60, 40],
+        maxWidth: 280,
+        content(reference) {
+          const pinyin = reference.getAttribute('data-pinyin') || '';
+          const en = reference.getAttribute('data-en') || '';
+          const meaning = reference.getAttribute('data-meaning') || '';
+
+          // Build a small HTML card for the tooltip
+          return `
+            <div class="tt">
+              <div class="label">Pinyin</div>
+              <div class="pinyin">${pinyin}</div>
+              <div class="sep"></div>
+              <div class="label">English</div>
+              <div class="en">${en}</div>
+              <div class="sep"></div>
+              <div class="label">Meaning</div>
+              <div class="meaning">${meaning}</div>
+            </div>
+          `;
+        },
+      });
+    });
+  </script>
+</body>
+</html>

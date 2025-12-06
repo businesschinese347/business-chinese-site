@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <title>Culture Section</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-image: url("culturesectionimage.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 300px;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .header-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px 40px;
+      border-radius: 20px;
+      max-width: 1000px;
+      text-align: center;
+    }
+
+      header h1 {
+      font-size: 5em;
+      margin:0;
+    }
+
+    /* --- Carousel core --- */
+    .carousel {
+      position: relative;
+      max-width: 800px;
+      margin: 18vh auto 0;
+    }
+
+    .carousel-viewport {
+      overflow: hidden;
+      border: 1px solid #e6e6e6;
+      border-radius: 12px;
+      background: wheat;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      padding: 50px 28px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .carousel-slide h4 {
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      color: #003366;
+    }
+
+    .carousel-slide p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      z-index: 5;
+      pointer-events: auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      line-height: 36px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    .carousel-btn.prev { left: 6px; }
+    .carousel-btn.next { right: 6px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .carousel-dots .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid #003366;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .carousel-dots .dot.active {
+      background: #003366;
+    }
+
+    /* Button bar */
+    .button-bar {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 30px 0 40px;
+      margin-top: 3vh;
+    }
+
+    .button-bar button {
+      padding: 10px 18px;
+      border-radius: 20px;
+      border: 1px solid #003366;
+      background-color: #003366;
+      color: white;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .button-bar button:hover {
+      background-color: #00509e;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Culture Section</h1>
+      <p>在中国的商业文化中，你在面试中的表现方式与你的简历同样重要。以下的技巧能够帮助你体现尊重、专业精神以及文化意识的行为。</p>
+    </div>
+  </header>
+
+
+  <!-- Interview Culture Carousel -->
+  <div class="carousel" id="interview-carousel">
+    <button class="carousel-btn prev" aria-label="Previous" onclick="changeSlide(-1)">‹</button>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="interview-track">
+        <!-- Slide 1 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Arrive on time for the interview.</p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Dress appropriately.</p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Pay attention to your speech and behavior: speak at a moderate pace, enunciate clearly, express yourself fluently, stay on point, and think clearly.</p>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Show respect to the interviewer; do not interrupt them while they are speaking.</p>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Take the initiative to ask if they need any additional materials or information to better evaluate your qualifications and background.</p>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Research the company’s history and corporate culture beforehand.</p>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Use polite expressions, such as “您好,” “谢谢,” and “打扰了”.</p>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Offer or receive items with both hands.</p>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="carousel-slide">
+          <h4>Interview Culture Tips</h4>
+          <p>Do not sit down unless invited to do so by the interviewer.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn next" aria-label="Next" onclick="changeSlide(1)">›</button>
+
+    <div class="carousel-dots" id="interview-dots"></div>
+  </div>
+
+  <!-- Navigation buttons -->
+  <div class="button-bar">
+    <a href="lesson1.html"><button>Back To Lesson 1 Page</button></a>
+    <a href="homepage.html"><button>Back To Home Page</button></a>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    let slides = [];
+    let dots = [];
+
+    function initInterviewCarousel() {
+      const track = document.getElementById('interview-track');
+      const dotsWrap = document.getElementById('interview-dots');
+
+      slides = Array.from(track.children);
+
+      // Build dots only once
+      dotsWrap.innerHTML = '';
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot' + (i === currentIndex ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        d.addEventListener('click', () => goToSlide(i));
+        dotsWrap.appendChild(d);
+      });
+
+      dots = Array.from(dotsWrap.children);
+      updateCarousel();
+    }
+
+    function updateCarousel() {
+      const track = document.getElementById('interview-track');
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+      dots.forEach(d => d.classList.remove('active'));
+      if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+    }
+
+    function goToSlide(index) {
+      const total = slides.length;
+      currentIndex = (index + total) % total; // wrap around
+      updateCarousel();
+    }
+
+    function changeSlide(delta) {
+      goToSlide(currentIndex + delta);
+    }
+
+    document.addEventListener('DOMContentLoaded', initInterviewCarousel);
+  </script>
+</body>
+</html>
